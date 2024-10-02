@@ -10,7 +10,7 @@ import Config
 config :skill_sanity,
   ecto_repos: [SkillSanity.Repo],
   generators: [timestamp_type: :utc_datetime],
-  ash_domains: []
+  ash_domains: [SkillSanity.Skills]
 
 # Configures the endpoint
 config :skill_sanity, SkillSanityWeb.Endpoint,
@@ -61,6 +61,33 @@ config :logger, :console,
 
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
+
+# Spark formatter config for Ash resources
+config :spark, :formatter,
+  remove_parens?: true,
+  "Ash.Resource": [
+    type: Ash.Resource,
+    section_order: [
+      :authentication,
+      :token,
+      :attributes,
+      :identities,
+      :relationships,
+      :archive,
+      :paper_trail,
+      :state_machine,
+      :preparations,
+      :changes,
+      :aggregates,
+      :calculations,
+      :validations,
+      :actions,
+      :code_interface,
+      :policies,
+      :field_policies,
+      :postgres
+    ]
+  ]
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.

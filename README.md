@@ -10,7 +10,7 @@ Full credit for the idea goes to [Ronan Camus](https://www.linkedin.com/in/freel
 
 ## Plan of action
 
-1. **Database Schema Creation**
+1. **Database Schema Creation** ✅
    - Implement a PostgreSQL database with the following tables:
      - **`skills`**: Store standardized skill names with unique slugs (e.g. name: "React", slug: "react").
      - **`skill_variations`**: Store different variations and spellings of each skill.
