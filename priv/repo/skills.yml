@@ -1,0 +1,21 @@
+- skill: react
+  name: React
+  variations:
+    - ReactJS
+    - react js
+    - React JS
+    - react-js
+    - react
+
+- skill: data-visualization
+  name: Data Visualization
+  variations:
+    - Data Vizualisation
+    - Data Visualization
+
+- skill: user-experience
+  name: User Experience
+  variations:
+    - Experience utilisateur
+    - UX
+    - User Experience

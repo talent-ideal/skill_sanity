@@ -65,6 +65,7 @@ defmodule SkillSanity.MixProject do
       {:jason, "~> 1.2"},
       {:dns_cluster, "~> 0.1.1"},
       {:bandit, "~> 1.5"},
+      {:yaml_elixir, "~> 2.11"},
 
       # dev/test
       {:dialyxir, "== 1.4.3", only: [:dev, :test], runtime: false}
