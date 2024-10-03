@@ -7,11 +7,45 @@
     - react-js
     - react
 
+- skill: vue
+  name: Vue
+  variations:
+    - Vue.js
+    - vuejs
+    - Vue JS
+    - vue-js
+    - vue
+
+- skill: angular
+  name: Angular
+  variations:
+    - AngularJS
+    - angular js
+    - Angular
+    - angular.js
+
+- skill: javascript
+  name: JavaScript
+  variations:
+    - Javascript
+    - Java Script
+    - JS
+    - javascript.js
+
+- skill: typescript
+  name: TypeScript
+  variations:
+    - Type Script
+    - TS
+    - typescript.js
+
 - skill: data-visualization
   name: Data Visualization
   variations:
     - Data Vizualisation
     - Data Visualization
+    - DataViz
+    - Data Viz
 
 - skill: user-experience
   name: User Experience
@@ -19,3 +53,11 @@
     - Experience utilisateur
     - UX
     - User Experience
+    - UX Design
+
+- skill: devops
+  name: DevOps
+  variations:
+    - Dev Ops
+    - DevOps
+    - DevOps Engineer
