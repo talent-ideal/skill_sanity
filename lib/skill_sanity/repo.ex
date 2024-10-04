@@ -2,7 +2,7 @@ defmodule SkillSanity.Repo do
   use AshPostgres.Repo, otp_app: :skill_sanity
 
   def installed_extensions do
-    ["ash-functions", "uuid-ossp", "citext"]
+    ["ash-functions", "uuid-ossp", "citext", "pg_trgm"]
   end
 
   def min_pg_version do

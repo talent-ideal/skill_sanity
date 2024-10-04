@@ -3,10 +3,12 @@ defmodule SkillSanity.Skills.Variation do
     domain: SkillSanity.Skills,
     data_layer: AshPostgres.DataLayer
 
+  @similarity_threshold 0.5
+
   attributes do
     integer_primary_key :id
 
-    attribute :variation, :string, allow_nil?: false
+    attribute :variation, :ci_string, allow_nil?: false
 
     create_timestamp :inserted_at
     update_timestamp :updated_at
@@ -22,6 +24,12 @@ defmodule SkillSanity.Skills.Variation do
       source_attribute :skill_id
       attribute_type :integer
       allow_nil? false
+    end
+  end
+
+  calculations do
+    calculate :similarity, :float, expr(trigram_similarity(variation, ^arg(:search_term))) do
+      argument :search_term, :string, allow_nil?: false
     end
   end
 
@@ -42,12 +50,18 @@ defmodule SkillSanity.Skills.Variation do
       change manage_relationship(:skill_id, :skill, type: :append)
     end
 
-    read :get_by_variation, get_by: :variation
+    read :search do
+      argument :search_term, :string, allow_nil?: false
+
+      filter expr(trigram_similarity(variation, ^arg(:search_term)) > @similarity_threshold)
+
+      prepare build(sort: [similarity: {%{search_term: arg(:search_term)}, :desc}])
+    end
   end
 
   code_interface do
-    define :get_by_variation, args: [:slug]
     define :create, args: [:skill_id]
+    define :search, args: [:search_term]
   end
 
   postgres do
