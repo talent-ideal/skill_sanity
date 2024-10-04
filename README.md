@@ -18,7 +18,7 @@ Full credit for the idea goes to [Ronan Camus](https://www.linkedin.com/in/freel
 2. **Search Implementation** ✅
    - Use PostgreSQL's `trgm` module to find the best match from dirty input.
 
-3. **API Development**
+3. **API Development** ✅
    - Create a basic API endpoint to retrieve a skill slug from any of its variations (should work with lists).
 
 4. **Handling Missing Skills**

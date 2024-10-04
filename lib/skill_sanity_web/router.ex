@@ -21,9 +21,11 @@ defmodule SkillSanityWeb.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", SkillSanityWeb do
-  #   pipe_through :api
-  # end
+  scope "/api", SkillSanityWeb do
+    pipe_through :api
+
+    get "/skills/search", SkillController, :search
+  end
 
   # Enable LiveDashboard and Swoosh mailbox preview in development
   if Application.compile_env(:skill_sanity, :dev_routes) do
