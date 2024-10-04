@@ -1,10 +1,11 @@
 defmodule SkillSanity.MixProject do
   use Mix.Project
 
+  @version "1.0.0-alpha.1"
   def project do
     [
       app: :skill_sanity,
-      version: "0.1.0",
+      version: @version,
       elixir: "~> 1.17.1",
       elixirc_paths: elixirc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
