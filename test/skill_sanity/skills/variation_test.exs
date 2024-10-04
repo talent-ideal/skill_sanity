@@ -8,7 +8,6 @@ defmodule SkillSanity.Skills.VariationTest do
       skill = Skills.create_skill!("react", "React")
 
       Skills.create_variation!(skill.id, "ReactJS")
-      Skills.create_variation!(skill.id, "react js")
       Skills.create_variation!(skill.id, "React JS")
       Skills.create_variation!(skill.id, "react-js")
       Skills.create_variation!(skill.id, "react")

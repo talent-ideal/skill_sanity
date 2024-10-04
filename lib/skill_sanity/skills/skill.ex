@@ -6,8 +6,8 @@ defmodule SkillSanity.Skills.Skill do
   attributes do
     integer_primary_key :id
 
-    attribute :slug, :string, allow_nil?: false
-    attribute :name, :string, allow_nil?: false
+    attribute :slug, :ci_string, allow_nil?: false
+    attribute :name, :ci_string, allow_nil?: false
 
     create_timestamp :inserted_at
     update_timestamp :updated_at
@@ -27,12 +27,12 @@ defmodule SkillSanity.Skills.Skill do
 
     defaults [:create, :read]
 
-    read :get_by_slug, get_by: :slug
+    read :get_by_name, get_by: :name
   end
 
   code_interface do
-    define :get_by_slug, args: [:slug]
     define :create
+    define :get_by_name, args: [:name]
   end
 
   postgres do

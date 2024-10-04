@@ -15,7 +15,7 @@ Full credit for the idea goes to [Ronan Camus](https://www.linkedin.com/in/freel
      - **`skills`**: Store standardized skill names with unique slugs (e.g. name: "React", slug: "react").
      - **`skill_variations`**: Store different variations and spellings of each skill.
 
-2. **Search Implementation**
+2. **Search Implementation** ✅
    - Use PostgreSQL's `trgm` module to find the best match from dirty input.
 
 3. **API Development**
