@@ -7,6 +7,8 @@ defmodule SkillSanity.Application do
 
   @impl true
   def start(_type, _args) do
+    Appsignal.Phoenix.LiveView.attach()
+
     children = [
       SkillSanityWeb.Telemetry,
       SkillSanity.Repo,

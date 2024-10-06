@@ -20,6 +20,26 @@ if System.get_env("PHX_SERVER") do
   config :skill_sanity, SkillSanityWeb.Endpoint, server: true
 end
 
+deploy_env =
+  case System.get_env("PHX_HOST") do
+    "skills.talentideal.com" -> :production
+    "skill-sanity-staging-web.fly.dev" -> :staging
+    _ -> :dev
+  end
+
+appsignal_push_api_key =
+  System.get_env("APPSIGNAL_PUSH_KEY") ||
+    (config_env() != :test &&
+       raise """
+       environment variable APPSIGNAL_PUSH_KEY is missing.
+       """)
+
+config :appsignal, :config,
+  otp_app: :skill_sanity,
+  name: "skill_sanity",
+  push_api_key: appsignal_push_api_key,
+  env: deploy_env
+
 if config_env() == :prod do
   database_url =
     System.get_env("DATABASE_URL") ||
