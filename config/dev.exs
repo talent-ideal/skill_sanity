@@ -68,7 +68,7 @@ config :skill_sanity, SkillSanityWeb.Endpoint,
 config :skill_sanity, dev_routes: true
 
 # Do not include metadata nor timestamps in development logs
-config :logger, :console, format: "[$level] $message\n"
+config :logger, LoggerBackends.Console, format: "[$level] $message\n"
 
 # Set a higher stacktrace during development. Avoid configuring such
 # in production as building large stacktraces may be expensive.
@@ -96,3 +96,5 @@ config :semantic_release,
     "@semantic-release/exec@^6.0.3",
     "@insurgent/conventional-changelog-preset@^10.0.0"
   ]
+
+config :appsignal, :config, active: true

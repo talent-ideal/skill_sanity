@@ -21,7 +21,7 @@ defmodule SkillSanity.MixProject do
   def application do
     [
       mod: {SkillSanity.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :logger_backends, :runtime_tools]
     ]
   end
 
@@ -35,9 +35,14 @@ defmodule SkillSanity.MixProject do
   defp deps do
     [
       {:ash, "~> 3.4"},
+      {:ash_appsignal, "== 0.1.2"},
       {:picosat_elixir, "~> 0.2.3"},
       {:ash_postgres, "~> 2.4"},
       {:ash_phoenix, "~> 2.1"},
+      {:appsignal, "== 2.10.1"},
+      {:appsignal_phoenix, "== 2.3.8"},
+      {:logfmt_ex, "== 0.4.2"},
+      {:logger_backends, "== 1.0.0"},
       {:phoenix, "~> 1.7.14"},
       {:phoenix_ecto, "~> 4.5"},
       {:ecto_sql, "~> 3.10"},

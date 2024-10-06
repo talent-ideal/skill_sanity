@@ -54,10 +54,43 @@ config :tailwind,
     cd: Path.expand("../assets", __DIR__)
   ]
 
-# Configures Elixir's Logger
-config :logger, :console,
+# Use Elixir's Logger backends
+config :logger, backends: [LoggerBackends.Console, SkillSanity.Shared.Logger.AppSignalBackend]
+
+# Configures console Logger backend
+config :logger, LoggerBackends.Console,
   format: "$time $metadata[$level] $message\n",
-  metadata: [:request_id]
+  metadata: :all
+
+# Configure custom Logger backend for App Signal
+config :logger, SkillSanity.Shared.Logger.AppSignalBackend,
+  format: "logfmt",
+  application_config: [
+    skill_sanity: [
+      group: :skill_sanity,
+      max_level: :info
+    ],
+    phoenix: [
+      group: :phoenix,
+      max_level: :fatal
+    ],
+    phoenix_live_view: [
+      group: :phoenix_live_view,
+      max_level: :fatal
+    ],
+    ecto_sql: [
+      group: :ecto,
+      max_level: :info
+    ],
+    ash: [
+      group: :ash,
+      max_level: :info
+    ],
+    default: [
+      group: :default,
+      max_level: :info
+    ]
+  ]
 
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
@@ -87,6 +120,26 @@ config :spark, :formatter,
       :field_policies,
       :postgres
     ]
+  ]
+
+# Ash tracing
+config :ash, :tracer, [AshAppsignal]
+
+config :ash_appsignal,
+  trace_types: [
+    :custom,
+    :action,
+    :changeset,
+    :validation,
+    :change,
+    :before_transaction,
+    :before_action,
+    :after_transaction,
+    :after_action,
+    :custom_flow_step,
+    :flow,
+    :query,
+    :preparation
   ]
 
 # Import environment specific config. This must remain at the bottom
