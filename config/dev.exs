@@ -1,7 +1,7 @@
 import Config
 
 # Configure your database
-config :skill_sanity, SkillSanity.Repo,
+config(:skill_sanity, SkillSanity.Repo,
   username: System.get_env("POSTGRES_USER") || "postgres",
   password: System.get_env("POSTGRES_PASSWORD") || "postres",
   hostname: System.get_env("POSTGRES_HOST") || "localhost",
@@ -10,6 +10,7 @@ config :skill_sanity, SkillSanity.Repo,
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
+)
 
 # For development, we disable any cache and enable
 # debugging and code reloading.
@@ -84,3 +85,14 @@ config :phoenix_live_view,
 
 # Disable swoosh api client as it is only required for production adapters.
 config :swoosh, :api_client, false
+
+# Configure Semantic Release
+config :semantic_release,
+  additional_packages: [
+    "semantic-release@^24.0.0",
+    "semantic-release-hex@next",
+    "@semantic-release/changelog@^6.0.3",
+    "@semantic-release/git@^10.0.1",
+    "@semantic-release/exec@^6.0.3",
+    "@insurgent/conventional-changelog-preset@^10.0.0"
+  ]

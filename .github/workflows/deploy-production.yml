@@ -1,0 +1,26 @@
+name: Deploy Production
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy-production:
+    name: Deploy app
+    runs-on: ubuntu-latest
+    concurrency: deploy-production-group
+    if: github.ref_name == github.event.repository.default_branch
+    steps:
+      - uses: actions/checkout@d632683dd7b4114ad314bca15554477dd762a938 # v4.2.0
+        with:
+          fetch-depth: 0
+          fetch-tags: true
+      - name: Create .env file
+        run: cp .env.example .env
+      - name: Output app revision
+        run: make get-revision
+      - uses: superfly/flyctl-actions/setup-flyctl@master
+        with:
+          version: 0.3.10 # renovate: datasource=github-releases depName=flyctl packageName=superfly/flyctl versioning=semver
+      - run: flyctl deploy --config fly.prod.toml -e APP_REVISION="$(make get-revision)"
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN_PRODUCTION }}
