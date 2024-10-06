@@ -1,0 +1,38 @@
+app = 'skill-sanity-staging-web'
+primary_region = 'cdg'
+kill_signal = 'SIGTERM'
+
+[build]
+
+[deploy]
+  release_command = '/app/bin/migrate'
+  strategy = 'canary'
+
+[env]
+  PHX_HOST = 'skill-sanity-staging-web.fly.dev'
+  PORT = '8080'
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = 'stop'
+  auto_start_machines = true
+  min_machines_running = 1
+  processes = ['app']
+
+  [http_service.concurrency]
+    type = 'connections'
+    hard_limit = 1000
+    soft_limit = 1000
+
+  [[http_service.checks]]
+    interval = '10s'
+    timeout = '5s'
+    grace_period = '10s'
+    method = 'GET'
+    path = '/health_check'
+
+[[vm]]
+  memory = '512mb'
+  cpu_kind = 'shared'
+  cpus = 1
