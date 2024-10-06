@@ -43,7 +43,7 @@ defmodule SkillSanityWeb do
         layouts: [html: SkillSanityWeb.Layouts]
 
       import Plug.Conn
-      import SkillSanityWeb.Gettext
+      use Gettext, backend: SkillSanityWeb.Gettext
 
       unquote(verified_routes())
     end
@@ -85,8 +85,7 @@ defmodule SkillSanityWeb do
       import Phoenix.HTML
       # Core UI components and translation
       import SkillSanityWeb.CoreComponents
-      import SkillSanityWeb.Gettext
-
+      use Gettext, backend: SkillSanityWeb.Gettext
       # Shortcut for generating JS commands
       alias Phoenix.LiveView.JS
 
