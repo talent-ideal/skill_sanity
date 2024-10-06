@@ -2,10 +2,11 @@ import Config
 
 # Configure your database
 config :skill_sanity, SkillSanity.Repo,
-  username: "postgres",
-  password: "postgres",
-  hostname: "localhost",
-  database: "skill_sanity_dev",
+  username: System.get_env("POSTGRES_USER") || "postgres",
+  password: System.get_env("POSTGRES_PASSWORD") || "postres",
+  hostname: System.get_env("POSTGRES_HOST") || "localhost",
+  port: System.get_env("POSTGRES_PORT") || 5432,
+  database: System.get_env("POSTGRES_DB") || "skill_sanity_dev",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10

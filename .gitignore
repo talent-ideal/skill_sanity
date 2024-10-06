@@ -1,5 +1,6 @@
-# Environment file with sensitive data
+# Environment files with sensitive data
 .env
+.env.staging
 
 # The directory Mix will write compiled artifacts to.
 /_build/
