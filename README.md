@@ -21,16 +21,25 @@ Full credit for the idea goes to [Ronan Camus](https://www.linkedin.com/in/freel
 3. **API Development** ✅
    - Create a basic API endpoint to retrieve a skill slug from any of its variations (should work with lists).
 
-4. **Handling Missing Skills**
+4. **Add Skill/Variation Access Logs**
+   - In order to prioritize/automate data cleanup, add a log of every skill/variation access.
+
+5. **Handling Missing Skills**
    - Integrate with external APIs (LinkedIn, GitHub, StackOverflow) to supplement the database with missing skills when needed.
 
-5. **Future Work**
-   - Implement localization for skill names and variants.
-   - Implement a simple front-end to allow users to experiment with instant search results.
+6. **Future Work**
+   - Skill/variation versioning.
+   - Skill/variation soft-delete.
+   - Skill flagging for manual review based on similarity, lemmatized similarity and other methods.
+   - Skill/variation merging in a practical manner for API consumers.
+   - Localization for skill names and variants.
+   - Simple front-end to allow users to experiment with instant search results.
+   - User feedback (flagging/voting) & suggestions (adding/updating existing data).
+   - Context-dependent search (e.g. "Enzyme" means different things on a JavaScript CV or a science CV).
 
 ## Potential issues
 
-- Very similar in name but actually different skills (e.g. AngularJS & Angular)
+- Very similar in name but actually different skills (e.g. AngularJS & Angular, Wine (compatibility layer) & Wine (beverage))
 
 ## Running locally
 
