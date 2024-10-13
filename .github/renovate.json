@@ -1,0 +1,32 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "github>talent-ideal/.github//renovate/elixir/elixir-app",
+    "regexManagers:dockerfileVersions"
+  ],
+  "packageRules": [
+    {
+      "matchManagers": ["docker-compose"],
+      "matchPackageNames": ["postgres"],
+      "semanticCommitType": "chore",
+      "semanticCommitScope": "docker"
+    },
+    {
+      "matchDatasources": ["docker"],
+      "matchPackageNames": ["debian"],
+      "versioning": "regex:^(?<compatibility>.*)-(?<minor>\\d+)-slim$"
+    },
+    {
+      "matchDatasources": ["docker"],
+      "matchPackageNames": ["debian"],
+      "matchUpdateTypes": ["pinDigest"],
+      "enabled": false
+    },
+    {
+      "matchDepNames": ["flyctl"],
+      "matchFileNames": [".github/workflows/*.yml"],
+      "semanticCommitType": "ci",
+      "semanticCommitScope": "action"
+    }
+  ]
+}
