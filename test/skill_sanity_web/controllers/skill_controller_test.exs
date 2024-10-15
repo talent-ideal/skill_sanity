@@ -38,9 +38,6 @@ defmodule SkillSanityWeb.SkillControllerTest do
 
       [match_1 | [match_2 | _]] = response
 
-      IO.inspect(match_1, label: "match_1")
-      IO.inspect(match_2, label: "match_2")
-
       assert response = [%{"skill" => %{id: skill_1.id}}, %{"skill" => %{id: skill_2.id}}]
     end
   end

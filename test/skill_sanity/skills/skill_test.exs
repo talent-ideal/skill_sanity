@@ -19,16 +19,30 @@ defmodule SkillSanity.Skills.SkillTest do
     end
   end
 
+  defp extract_args(input) do
+    {name, slug, source} = {input.name, Slug.slugify(input.name), input.source}
+    other_inputs = Map.drop(input, [:name, :slug, :source])
+
+    {name, slug, source, other_inputs}
+  end
+
   describe "valid inputs" do
     # now if our action inputs are invalid when we think they should be valid, we will find out here
     property "accepts all valid input" do
-      check all(input <- Ash.Generator.action_input(Skill, :create, %{name: name(), slug: nil})) do
-        {name, slug} = {input.name, Slug.slugify(input.name)}
-        other_inputs = Map.drop(input, [:name, :slug])
+      check all(
+              input <-
+                Ash.Generator.action_input(Skill, :create, %{
+                  name: name(),
+                  slug: nil,
+                  source: "test"
+                })
+            ) do
+        {name, slug, source, other_inputs} = extract_args(input)
 
         assert Skills.changeset_to_create_skill(
                  slug,
                  name,
+                 source,
                  other_inputs
                ).valid?
       end
@@ -37,18 +51,24 @@ defmodule SkillSanity.Skills.SkillTest do
     # same as the above, but actually call the action. This tests the underlying action implementation
     # not just initial validation
     property "succeeds on all valid input" do
-      check all(input <- Ash.Generator.action_input(Skill, :create, %{name: name(), slug: nil})) do
-        {name, slug} = {input.name, Slug.slugify(input.name)}
-        other_inputs = Map.drop(input, [:name, :slug])
+      check all(
+              input <-
+                Ash.Generator.action_input(Skill, :create, %{
+                  name: name(),
+                  slug: nil,
+                  source: "test"
+                })
+            ) do
+        {name, slug, source, other_inputs} = extract_args(input)
 
-        Skills.create_skill!(slug, name, other_inputs)
+        Skills.create_skill!(slug, name, source, other_inputs)
       end
     end
 
     test "can create some specific skills, in addition to any other valid inputs" do
-      Skills.create_skill!("javascript", "JavaScript")
-      Skills.create_skill!("react", "React")
-      Skills.create_skill!("angular-js", "AngularJS")
+      Skills.create_skill!("javascript", "JavaScript", "test")
+      Skills.create_skill!("react", "React", "test")
+      Skills.create_skill!("angular-js", "AngularJS", "test")
     end
   end
 end
