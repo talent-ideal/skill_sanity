@@ -8,6 +8,7 @@ defmodule SkillSanity.Skills.Skill do
 
     attribute :slug, :ci_string, allow_nil?: false
     attribute :name, :ci_string, allow_nil?: false
+    attribute :source, :ci_string, allow_nil?: false
 
     create_timestamp :inserted_at
     update_timestamp :updated_at
@@ -23,7 +24,7 @@ defmodule SkillSanity.Skills.Skill do
   end
 
   actions do
-    default_accept [:slug, :name]
+    default_accept [:slug, :name, :source]
 
     defaults [:create, :read]
 

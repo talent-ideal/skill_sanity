@@ -9,11 +9,11 @@ defmodule SkillSanity.Skills do
 
   resources do
     resource Skills.Skill do
-      define :create_skill, action: :create, args: [:slug, :name]
+      define :create_skill, action: :create, args: [:slug, :name, :source]
     end
 
     resource Skills.Variation do
-      define :create_variation, action: :create, args: [:skill_id, :variation]
+      define :create_variation, action: :create, args: [:skill_id, :variation, :source]
     end
   end
 
