@@ -3,6 +3,8 @@ defmodule SkillSanity.Skills.Skill do
     domain: SkillSanity.Skills,
     data_layer: AshPostgres.DataLayer
 
+  @similarity_threshold 0.5
+
   attributes do
     integer_primary_key :id
 
@@ -18,6 +20,14 @@ defmodule SkillSanity.Skills.Skill do
     identity :slug, [:slug]
   end
 
+  calculations do
+    calculate :similarity,
+              :float,
+              {SkillSanity.Shared.Calculations.Similarity, attribute: :slug} do
+      argument :search_term, :string, allow_nil?: false
+    end
+  end
+
   validations do
     validate string_length(:slug, max: 255)
     validate match(:slug, ~r/^[a-z0-9]+(?:-[a-z0-9]+)*$/), message: "must be an URL-safe slug"
@@ -28,12 +38,23 @@ defmodule SkillSanity.Skills.Skill do
 
     defaults [:create, :read]
 
+    read :get_by_slug, get_by: :slug
     read :get_by_name, get_by: :name
+
+    read :search do
+      argument :search_term, :string, allow_nil?: false
+
+      filter expr(trigram_similarity(slug, ^arg(:search_term)) > @similarity_threshold)
+
+      prepare build(sort: [similarity: {%{search_term: arg(:search_term)}, :desc}])
+    end
   end
 
   code_interface do
     define :create
+    define :get_by_slug, args: [:slug]
     define :get_by_name, args: [:name]
+    define :search, args: [:search_term]
   end
 
   postgres do
