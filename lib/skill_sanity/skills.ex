@@ -22,24 +22,30 @@ defmodule SkillSanity.Skills do
 
   Returns a `{skill, confidence}` tuple when found, `nil` otherwise.
   """
-  @spec search_skill(binary()) :: {float(), struct(), struct() | nil} | nil
+  @spec search_skill(binary()) :: {struct(), float(), struct() | nil} | nil
   def search_skill(search_term) do
-    case Skill.get_by_name(search_term) do
-      {:ok, skill} ->
-        {skill, 1, nil}
+    case Skill.search(search_term) do
+      {:ok, [best | _] = results} when results != [] ->
+        {best, round_similarity(best.similarity), nil}
 
-      {:error, _} ->
-        case Variation.search(search_term, load: [:skill]) do
-          {:ok, [best | _] = results} when results != [] ->
-            {best.skill, best.similarity, best}
-
-          _ ->
-            nil
-        end
+      _ ->
+        search_variation(search_term)
     end
   end
 
-  @spec search_skill!(binary()) :: {float(), struct(), struct() | nil}
+  defp search_variation(search_term) do
+    case Variation.search(search_term, load: [:skill]) do
+      {:ok, [best | _] = results} when results != [] ->
+        {best.skill, round_similarity(best.similarity), best}
+
+      _ ->
+        nil
+    end
+  end
+
+  defp round_similarity(similarity), do: Float.round(similarity, 3)
+
+  @spec search_skill!(binary()) :: {struct(), float(), struct() | nil}
   def search_skill!(search_term) do
     result = search_skill(search_term)
 

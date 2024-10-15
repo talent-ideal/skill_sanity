@@ -29,7 +29,9 @@ defmodule SkillSanity.Skills.Variation do
   end
 
   calculations do
-    calculate :similarity, :float, expr(trigram_similarity(variation, ^arg(:search_term))) do
+    calculate :similarity,
+              :float,
+              {SkillSanity.Shared.Calculations.Similarity, attribute: :variation} do
       argument :search_term, :string, allow_nil?: false
     end
   end
@@ -51,6 +53,8 @@ defmodule SkillSanity.Skills.Variation do
       change manage_relationship(:skill_id, :skill, type: :append)
     end
 
+    read :get, get_by: :variation
+
     read :search do
       argument :search_term, :string, allow_nil?: false
 
@@ -62,6 +66,7 @@ defmodule SkillSanity.Skills.Variation do
 
   code_interface do
     define :create, args: [:skill_id]
+    define :get, args: [:variation]
     define :search, args: [:search_term]
   end
 
