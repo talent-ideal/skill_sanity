@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.0-alpha.4](https://github.com/talent-ideal/skill_sanity/compare/v1.0.0-alpha.3...v1.0.0-alpha.4) (2024-10-15)
+
+### ✨ Features
+
+* **search:** return best match skills and variations & parallelize searches ([724b0fb](https://github.com/talent-ideal/skill_sanity/commit/724b0fbf4dac126b74c66644eada1791f7582dc7))
+
 ## [1.0.0-alpha.3](https://github.com/talent-ideal/skill_sanity/compare/v1.0.0-alpha.2...v1.0.0-alpha.3) (2024-10-15)
 
 ### ✨ Features
