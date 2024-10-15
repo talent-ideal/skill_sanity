@@ -20,12 +20,13 @@ skills_data = YamlElixir.read_from_string!(content)
 Enum.each(skills_data, fn skill_entry ->
   slug = skill_entry["skill"]
   name = skill_entry["name"]
+  source = "seed"
 
-  skill = Skills.create_skill!(slug, name)
+  skill = Skills.create_skill!(slug, name, source)
 
   variations = skill_entry["variations"] || []
 
   Enum.each(variations, fn variation ->
-    Skills.create_variation!(skill.id, variation)
+    Skills.create_variation!(skill.id, variation, source)
   end)
 end)

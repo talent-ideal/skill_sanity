@@ -9,6 +9,7 @@ defmodule SkillSanity.Skills.Variation do
     integer_primary_key :id
 
     attribute :variation, :ci_string, allow_nil?: false
+    attribute :source, :ci_string, allow_nil?: false
 
     create_timestamp :inserted_at
     update_timestamp :updated_at
@@ -38,7 +39,7 @@ defmodule SkillSanity.Skills.Variation do
   end
 
   actions do
-    default_accept [:variation]
+    default_accept [:variation, :source]
 
     defaults [:read]
 
