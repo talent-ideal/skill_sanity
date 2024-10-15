@@ -15,13 +15,15 @@ defmodule SkillSanity.SkillsFixtures do
           Map.has_key?(attrs, :slug) -> attrs.slug
           Map.has_key?(attrs, :name) -> Slug.slugify(attrs.name)
           true -> "react"
-        end
+        end,
+      source: "test"
     })
   end
 
   def variation_valid_attr(attrs \\ %{}) do
     Enum.into(attrs, %{
-      variation: "react.js"
+      variation: "react.js",
+      source: "test"
     })
   end
 
