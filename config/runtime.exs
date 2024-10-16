@@ -29,7 +29,7 @@ deploy_env =
 
 appsignal_push_api_key =
   System.get_env("APPSIGNAL_PUSH_KEY") ||
-    (config_env() != :test &&
+    (!Enum.member?([:test, :dev], config_env()) &&
        raise """
        environment variable APPSIGNAL_PUSH_KEY is missing.
        """)
