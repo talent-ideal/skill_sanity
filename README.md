@@ -32,9 +32,11 @@ Full credit for the idea goes to [Ronan Camus](https://www.linkedin.com/in/freel
    - Skill/variation soft-delete.
    - Skill flagging for manual review based on similarity, lemmatized similarity and other methods.
    - Skill/variation merging in a practical manner for API consumers.
-   - Localization for skill names and variants.
+   - Localization for skill names and variations.
+   - Skills extraction from blocks of text (resumes, job descriptions, ...).
    - Simple front-end to allow users to experiment with instant search results.
    - User feedback (flagging/voting) & suggestions (adding/updating existing data).
+   - Related skills.
    - Context-dependent search (e.g. "Enzyme" means different things on a JavaScript CV or a science CV).
 
 ## Potential issues
