@@ -183,8 +183,8 @@ fly-deploy-prod:
 
 .PHONY: fly-logs-staging
 fly-logs-staging:
-	@fly logs --config fly.staging.toml | sed -e '/GET \/health_check/,+1d'
+	@fly logs --config fly.staging.toml | sed -e '/GET \/api\/health_check/,+1d'
 
 .PHONY: fly-logs-prod
 fly-logs-prod:
-	@fly logs --config fly.prod.toml | sed -e '/GET \/health_check/,+1d'
+	@fly logs --config fly.prod.toml | sed -e '/GET \/api\/health_check/,+1d'
