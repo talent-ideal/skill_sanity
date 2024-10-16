@@ -7,7 +7,7 @@ defmodule SkillSanityWeb.Plugs.HealthCheck do
   @impl true
   def init(opts), do: opts
 
-  def call(%Plug.Conn{request_path: "/health_check"} = conn, _opts) do
+  def call(%Plug.Conn{request_path: "/api/health_check"} = conn, _opts) do
     case SkillSanity.Repo.query("SELECT 1") do
       {:ok, _} ->
         send_resp(conn, 200, "ok")
