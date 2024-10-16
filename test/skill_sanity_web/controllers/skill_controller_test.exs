@@ -1,5 +1,5 @@
 defmodule SkillSanityWeb.SkillControllerTest do
-  use SkillSanityWeb.ConnCase
+  use SkillSanityWeb.ConnCase, async: true
 
   import SkillSanity.SkillsFixtures
 

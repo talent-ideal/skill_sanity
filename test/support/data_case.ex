@@ -37,7 +37,16 @@ defmodule SkillSanity.DataCase do
   """
   def setup_sandbox(tags) do
     pid = Ecto.Adapters.SQL.Sandbox.start_owner!(SkillSanity.Repo, shared: not tags[:async])
-    on_exit(fn -> Ecto.Adapters.SQL.Sandbox.stop_owner(pid) end)
+
+    on_exit(fn ->
+      # Terminate all running tasks before exiting tests to avoid database access/ownership errors.
+      Task.Supervisor.children(SkillSanity.SearchLogTaskSupervisor)
+      |> Enum.each(fn pid ->
+        Task.Supervisor.terminate_child(SkillSanity.SearchLogTaskSupervisor, pid)
+      end)
+
+      Ecto.Adapters.SQL.Sandbox.stop_owner(pid)
+    end)
   end
 
   @doc """

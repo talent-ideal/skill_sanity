@@ -21,7 +21,7 @@ Full credit for the idea goes to [Ronan Camus](https://www.linkedin.com/in/freel
 3. **API Development** ✅
    - Create a basic API endpoint to retrieve a skill slug from any of its variations (should work with lists).
 
-4. **Add Skill/Variation Access Logs**
+4. **Add Skill/Variation Access Logs** ✅
    - In order to prioritize/automate data cleanup, add a log of every skill/variation access.
 
 5. **Handling Missing Skills**

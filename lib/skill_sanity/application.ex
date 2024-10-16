@@ -19,7 +19,8 @@ defmodule SkillSanity.Application do
       # Start a worker by calling: SkillSanity.Worker.start_link(arg)
       # {SkillSanity.Worker, arg},
       # Start to serve requests, typically the last entry
-      SkillSanityWeb.Endpoint
+      SkillSanityWeb.Endpoint,
+      {Task.Supervisor, name: SkillSanity.SearchLogTaskSupervisor}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
