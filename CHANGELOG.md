@@ -1,5 +1,29 @@
 # Changelog
 
+## [1.0.0-alpha.5](https://github.com/talent-ideal/skill_sanity/compare/v1.0.0-alpha.4...v1.0.0-alpha.5) (2024-10-17)
+
+### ✨ Features
+
+* **search:** log skill search requests & results ([d453e85](https://github.com/talent-ideal/skill_sanity/commit/d453e8539dedd426dbf71984b6cec7b2be7aec9e))
+
+### 🛠 Builds
+
+* **deps:** pin dependencies ([#1](https://github.com/talent-ideal/skill_sanity/issues/1)) [skip ci] ([4be712c](https://github.com/talent-ideal/skill_sanity/commit/4be712c8f5c06b2a735984b88f051ff33998b3d1))
+
+### 📦 Code Refactoring
+
+* update health check route ([c161f15](https://github.com/talent-ideal/skill_sanity/commit/c161f15390576013f009ad4a5756ff3caca4abf0))
+
+### 📚 Documentation
+
+* update "Future Work" section ([0a067d8](https://github.com/talent-ideal/skill_sanity/commit/0a067d875da32529d064ba60d0bd17483b9b66c5))
+
+### ♻️ Chores
+
+* add Pylote dataset import script ([70316e5](https://github.com/talent-ideal/skill_sanity/commit/70316e5e06f4a21d3bd44d03c7c09683115b7bce))
+* **docker:** update postgres docker tag to v16.4 [skip ci] ([b8e8257](https://github.com/talent-ideal/skill_sanity/commit/b8e82573257c530692701c68707e916268964442))
+* update CHANGELOG commit refs after rebase ([cdf9484](https://github.com/talent-ideal/skill_sanity/commit/cdf9484bcd94796b227ee59eae363f7bb093c451))
+
 ## [1.0.0-alpha.4](https://github.com/talent-ideal/skill_sanity/compare/v1.0.0-alpha.3...v1.0.0-alpha.4) (2024-10-15)
 
 ### ✨ Features

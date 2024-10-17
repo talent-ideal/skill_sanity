@@ -1,7 +1,7 @@
 defmodule SkillSanity.MixProject do
   use Mix.Project
 
-  @version "1.0.0-alpha.4"
+  @version "1.0.0-alpha.5"
   def project do
     [
       app: :skill_sanity,
