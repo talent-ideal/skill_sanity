@@ -45,7 +45,7 @@ defmodule SkillSanity.MixProject do
       {:logger_backends, "== 1.0.0"},
       {:phoenix, "== 1.7.14"},
       {:phoenix_ecto, "== 4.6.2"},
-      {:ecto_sql, "== 3.12.0"},
+      {:ecto_sql, "== 3.12.1"},
       {:nimble_csv, "== 1.2.0"},
       {:postgrex, "== 0.19.1"},
       {:phoenix_html, "== 4.1.1"},
