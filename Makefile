@@ -159,11 +159,11 @@ fly-iex-prod:
 
 .PHONY: fly-psql-staging
 fly-psql-staging:
-	@fly postgres connect -a skill-sanity-db-staging
+	@fly postgres connect -a skill-sanity-staging-db
 
 .PHONY: fly-psql-prod
 fly-psql-prod:
-	@fly postgres connect -a skill-sanity-db-prod
+	@fly postgres connect -a skill-sanity-prod-db
 
 .PHONY: fly-status-staging
 fly-status-staging:
