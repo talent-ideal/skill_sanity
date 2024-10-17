@@ -37,7 +37,7 @@ defmodule SkillSanity.MixProject do
       {:ash, "== 3.4.21"},
       {:ash_appsignal, "== 0.1.2"},
       {:picosat_elixir, "== 0.2.3"},
-      {:ash_postgres, "== 2.4.4"},
+      {:ash_postgres, "== 2.4.9"},
       {:ash_phoenix, "== 2.1.4"},
       {:appsignal, "== 2.10.1"},
       {:appsignal_phoenix, "== 2.3.8"},
