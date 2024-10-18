@@ -6,7 +6,7 @@ defmodule SkillSanity.Skills.Variation do
   @similarity_threshold 0.5
 
   attributes do
-    integer_primary_key :id
+    uuid_v7_primary_key :id
 
     attribute :variation, :ci_string, allow_nil?: false
     attribute :source, :ci_string, allow_nil?: false
@@ -23,7 +23,7 @@ defmodule SkillSanity.Skills.Variation do
     belongs_to :skill, SkillSanity.Skills.Skill do
       domain SkillSanity.Skills
       source_attribute :skill_id
-      attribute_type :integer
+      attribute_type :uuid_v7
       allow_nil? false
     end
   end
@@ -48,7 +48,7 @@ defmodule SkillSanity.Skills.Variation do
     create :create do
       primary? true
 
-      argument :skill_id, :integer, allow_nil?: false
+      argument :skill_id, :uuid_v7, allow_nil?: false
 
       change manage_relationship(:skill_id, :skill, type: :append)
     end

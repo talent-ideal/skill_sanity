@@ -4,7 +4,7 @@ defmodule SkillSanity.Skills.SearchLog do
     data_layer: AshPostgres.DataLayer
 
   attributes do
-    uuid_primary_key :id
+    uuid_v7_primary_key :id
 
     attribute :search_term, :string, allow_nil?: false
     attribute :confidence, :float
@@ -17,13 +17,13 @@ defmodule SkillSanity.Skills.SearchLog do
     belongs_to :matched_skill, SkillSanity.Skills.Skill do
       domain SkillSanity.Skills
       source_attribute :matched_skill_id
-      attribute_type :integer
+      attribute_type :uuid_v7
     end
 
     belongs_to :matched_variation, SkillSanity.Skills.Variation do
       domain SkillSanity.Skills
       source_attribute :matched_variation_id
-      attribute_type :integer
+      attribute_type :uuid_v7
     end
   end
 
@@ -36,8 +36,8 @@ defmodule SkillSanity.Skills.SearchLog do
         :confidence
       ]
 
-      argument :matched_skill_id, :integer
-      argument :matched_variation_id, :integer
+      argument :matched_skill_id, :uuid_v7
+      argument :matched_variation_id, :uuid_v7
 
       change manage_relationship(:matched_skill_id, :matched_skill, type: :append)
       change manage_relationship(:matched_variation_id, :matched_variation, type: :append)

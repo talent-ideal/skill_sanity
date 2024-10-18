@@ -6,7 +6,7 @@ defmodule SkillSanity.Skills.Skill do
   @similarity_threshold 0.5
 
   attributes do
-    integer_primary_key :id
+    uuid_v7_primary_key :id
 
     attribute :slug, :ci_string, allow_nil?: false
     attribute :name, :ci_string, allow_nil?: false
