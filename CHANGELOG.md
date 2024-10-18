@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.0.0-alpha.6](https://github.com/talent-ideal/skill_sanity/compare/v1.0.0-alpha.5...v1.0.0-alpha.6) (2024-10-18)
+
+### ⚠ Breaking changes
+
+* switch to uuid v7 primary keys
+
+### 📦 Code Refactoring
+
+* switch to uuid v7 primary keys ([9d25568](https://github.com/talent-ideal/skill_sanity/commit/9d25568989bed736c5dcdf66e100a67574e8ec2c))
+
+### ♻️ Chores
+
+* update Fly database names in Makefile ([c82b13c](https://github.com/talent-ideal/skill_sanity/commit/c82b13c4738a3bbcafe19957a3671041a6eed570))
+
 ## [1.0.0-alpha.5](https://github.com/talent-ideal/skill_sanity/compare/v1.0.0-alpha.4...v1.0.0-alpha.5) (2024-10-17)
 
 ### ✨ Features
