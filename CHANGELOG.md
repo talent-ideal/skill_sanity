@@ -1,5 +1,34 @@
 # Changelog
 
+## [1.0.0-alpha.7](https://github.com/talent-ideal/skill_sanity/compare/v1.0.0-alpha.6...v1.0.0-alpha.7) (2024-10-19)
+
+### 🛠 Builds
+
+* **deps:** update dependency appsignal to == 2.13.0 ([#12](https://github.com/talent-ideal/skill_sanity/issues/12)) [skip ci] ([8474056](https://github.com/talent-ideal/skill_sanity/commit/8474056a570ba15aa16a989a244d9d68d5935509))
+* **deps:** update dependency appsignal_phoenix to == 2.5.0 ([#13](https://github.com/talent-ideal/skill_sanity/issues/13)) [skip ci] ([3ddbd85](https://github.com/talent-ideal/skill_sanity/commit/3ddbd855d273e26649a86072b59192eb9121478e))
+* **deps:** update dependency ash to == 3.4.33 ([#19](https://github.com/talent-ideal/skill_sanity/issues/19)) [skip ci] ([a9f7a90](https://github.com/talent-ideal/skill_sanity/commit/a9f7a90d18a9ee454d08835eb40562e6590fcbfa))
+* **deps:** update dependency ash_appsignal to == 0.1.3 ([#2](https://github.com/talent-ideal/skill_sanity/issues/2)) [skip ci] ([1569b3c](https://github.com/talent-ideal/skill_sanity/commit/1569b3c4424894d1d253e668f405808ff6c5f321))
+* **deps:** update dependency ash_phoenix to == 2.1.6 ([#20](https://github.com/talent-ideal/skill_sanity/issues/20)) [skip ci] ([b655f36](https://github.com/talent-ideal/skill_sanity/commit/b655f363cd50791048325836436225b2dd9f5957))
+* **deps:** update dependency ash_postgres to == 2.4.9 ([#21](https://github.com/talent-ideal/skill_sanity/issues/21)) [skip ci] ([901fbdf](https://github.com/talent-ideal/skill_sanity/commit/901fbdf084fb99198300dbc5282057c70618dbd0))
+* **deps:** update dependency dialyxir to == 1.4.4 ([#3](https://github.com/talent-ideal/skill_sanity/issues/3)) [skip ci] ([f9970b5](https://github.com/talent-ideal/skill_sanity/commit/f9970b57cd3e5119533cd048cdc869833c61da22))
+* **deps:** update dependency ecto_sql to == 3.12.1 ([#4](https://github.com/talent-ideal/skill_sanity/issues/4)) [skip ci] ([dfdcf93](https://github.com/talent-ideal/skill_sanity/commit/dfdcf93f8ca2c9c2855119fc620060f8354ca03d))
+* **deps:** update dependency esbuild to == 0.8.2 ([#27](https://github.com/talent-ideal/skill_sanity/issues/27)) ([9f00cd5](https://github.com/talent-ideal/skill_sanity/commit/9f00cd51d00442ac5f9984b1e0d002b11a64234a))
+* **deps:** update dependency heroicons to == v2.1.5 ([#7](https://github.com/talent-ideal/skill_sanity/issues/7)) ([d4b89bc](https://github.com/talent-ideal/skill_sanity/commit/d4b89bc368dbef4923e8c1f919491bafe00866f4))
+* **deps:** update dependency phoenix_live_view to == 1.0.0-rc.7 ([#24](https://github.com/talent-ideal/skill_sanity/issues/24)) [skip ci] ([8570c95](https://github.com/talent-ideal/skill_sanity/commit/8570c954f6d44f2c2c28b4720cda52fc6284166c))
+* **deps:** update dependency swoosh to == 1.17.2 ([#8](https://github.com/talent-ideal/skill_sanity/issues/8)) [skip ci] ([179baa0](https://github.com/talent-ideal/skill_sanity/commit/179baa02e890ffecd86e9b5a246dad82b1aff6ad))
+* **deps:** update dependency tailwind to == 0.2.4 ([#28](https://github.com/talent-ideal/skill_sanity/issues/28)) [skip ci] ([11756e2](https://github.com/talent-ideal/skill_sanity/commit/11756e202f8ab0fa116aef116b5fc73a80294265))
+
+### ⚙️ Continuous Integrations
+
+* **action:** update actions/cache action to v4.1.1 ([#15](https://github.com/talent-ideal/skill_sanity/issues/15)) [skip ci] ([9de8680](https://github.com/talent-ideal/skill_sanity/commit/9de86809643e483e42b7213b8077346894d3b8b2))
+* **action:** update actions/checkout action to v4.2.1 ([#10](https://github.com/talent-ideal/skill_sanity/issues/10)) [skip ci] ([b57f7a1](https://github.com/talent-ideal/skill_sanity/commit/b57f7a1ddd8380ff805de5df47baae95dc625806))
+* **action:** update dependency flyctl to v0.3.24 ([#11](https://github.com/talent-ideal/skill_sanity/issues/11)) [skip ci] ([cd19d48](https://github.com/talent-ideal/skill_sanity/commit/cd19d48ea48e8067aab5a7c609e8cbaa303ba7a4))
+
+### ♻️ Chores
+
+* **docker:** update postgres:16.4 docker digest to 91f464e ([#23](https://github.com/talent-ideal/skill_sanity/issues/23)) [skip ci] ([cf4648f](https://github.com/talent-ideal/skill_sanity/commit/cf4648f283c2909d999b7f1f9d19440b757f2089))
+* migrate renovate config ([d44b518](https://github.com/talent-ideal/skill_sanity/commit/d44b518a511abd1f43c15e26cce985d7dc462460))
+
 ## [1.0.0-alpha.6](https://github.com/talent-ideal/skill_sanity/compare/v1.0.0-alpha.5...v1.0.0-alpha.6) (2024-10-18)
 
 ### ⚠ Breaking changes
