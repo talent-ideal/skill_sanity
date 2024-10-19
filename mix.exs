@@ -40,7 +40,7 @@ defmodule SkillSanity.MixProject do
       {:ash_postgres, "== 2.4.4"},
       {:ash_phoenix, "== 2.1.4"},
       {:appsignal, "== 2.13.0"},
-      {:appsignal_phoenix, "== 2.3.8"},
+      {:appsignal_phoenix, "== 2.5.0"},
       {:logfmt_ex, "== 0.4.2"},
       {:logger_backends, "== 1.0.0"},
       {:phoenix, "== 1.7.14"},
