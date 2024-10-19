@@ -2,7 +2,7 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "github>talent-ideal/.github//renovate/elixir/elixir-app",
-    "regexManagers:dockerfileVersions"
+    "customManagers:dockerfileVersions"
   ],
   "packageRules": [
     {
