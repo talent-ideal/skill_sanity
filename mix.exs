@@ -59,7 +59,7 @@ defmodule SkillSanity.MixProject do
       {:tailwind, "== 0.2.4", runtime: Mix.env() == :dev},
       {:heroicons,
        github: "tailwindlabs/heroicons",
-       tag: "v2.1.1",
+       tag: "v2.1.5",
        sparse: "optimized",
        app: false,
        compile: false,
