@@ -75,7 +75,7 @@ defmodule SkillSanity.MixProject do
       {:yaml_elixir, "== 2.11.0"},
 
       # dev/test
-      {:dialyxir, "== 1.4.3", only: [:dev, :test], runtime: false},
+      {:dialyxir, "== 1.4.4", only: [:dev, :test], runtime: false},
       {:semantic_release, "== 1.0.0-alpha.7", only: :dev, runtime: false}
     ]
   end
