@@ -35,7 +35,7 @@ defmodule SkillSanity.MixProject do
   defp deps do
     [
       {:ash, "== 3.4.21"},
-      {:ash_appsignal, "== 0.1.2"},
+      {:ash_appsignal, "== 0.1.3"},
       {:picosat_elixir, "== 0.2.3"},
       {:ash_postgres, "== 2.4.4"},
       {:ash_phoenix, "== 2.1.4"},
