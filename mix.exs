@@ -39,7 +39,7 @@ defmodule SkillSanity.MixProject do
       {:picosat_elixir, "== 0.2.3"},
       {:ash_postgres, "== 2.4.4"},
       {:ash_phoenix, "== 2.1.4"},
-      {:appsignal, "== 2.10.1"},
+      {:appsignal, "== 2.13.0"},
       {:appsignal_phoenix, "== 2.3.8"},
       {:logfmt_ex, "== 0.4.2"},
       {:logger_backends, "== 1.0.0"},
