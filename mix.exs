@@ -34,7 +34,7 @@ defmodule SkillSanity.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
-      {:ash, "== 3.4.21"},
+      {:ash, "== 3.4.33"},
       {:ash_appsignal, "== 0.1.3"},
       {:picosat_elixir, "== 0.2.3"},
       {:ash_postgres, "== 2.4.4"},
