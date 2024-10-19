@@ -64,7 +64,7 @@ defmodule SkillSanity.MixProject do
        app: false,
        compile: false,
        depth: 1},
-      {:swoosh, "== 1.17.1"},
+      {:swoosh, "== 1.17.2"},
       {:finch, "== 0.19.0"},
       {:telemetry_metrics, "== 1.0.0"},
       {:telemetry_poller, "== 1.1.0"},
