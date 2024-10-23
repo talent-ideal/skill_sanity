@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.0-alpha.9](https://github.com/talent-ideal/skill_sanity/compare/v1.0.0-alpha.8...v1.0.0-alpha.9) (2024-10-23)
+
+### ✨ Features
+
+* set CORS headers allow all origins ([b93ec92](https://github.com/talent-ideal/skill_sanity/commit/b93ec92bf2e28c674b71d1698f1a3c93e2aea6eb))
+
 ## [1.0.0-alpha.8](https://github.com/talent-ideal/skill_sanity/compare/v1.0.0-alpha.7...v1.0.0-alpha.8) (2024-10-23)
 
 ### 🐛 Bug Fixes
