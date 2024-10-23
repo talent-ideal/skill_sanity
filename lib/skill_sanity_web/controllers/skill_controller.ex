@@ -6,12 +6,12 @@ defmodule SkillSanityWeb.SkillController do
   action_fallback SkillSanityWeb.FallbackController
 
   def search(conn, %{"skill" => search_term}) do
-    {skill, confidence, variation} =
+    result =
       search_term
       |> String.trim()
-      |> Skills.search!()
+      |> Skills.search()
 
-    render(conn, :search_one, skill: skill, confidence: confidence, variation: variation)
+    render(conn, :search_one, result: result)
   end
 
   def search(conn, %{"skills" => search_terms}) do
@@ -21,9 +21,13 @@ defmodule SkillSanityWeb.SkillController do
       |> Enum.map(fn search_term ->
         search_term
         |> String.trim()
-        |> Skills.search!()
+        |> Skills.search()
       end)
 
     render(conn, :search_many, results: results)
+  end
+
+  def search(conn, _) do
+    render(conn, :search_one, result: nil)
   end
 end

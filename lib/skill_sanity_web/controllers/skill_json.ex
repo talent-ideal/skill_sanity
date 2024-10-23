@@ -5,7 +5,7 @@ defmodule SkillSanityWeb.SkillJSON do
   @doc """
   Renders a single skill search result.
   """
-  def search_one(result) do
+  def search_one(%{result: result}) do
     %{data: data(result)}
   end
 
@@ -14,15 +14,17 @@ defmodule SkillSanityWeb.SkillJSON do
   """
   def search_many(%{results: results}) do
     %{
-      data:
-        for(
-          {skill, confidence, variation} <- results,
-          do: data(%{skill: skill, confidence: confidence, variation: variation})
-        )
+      data: for(result <- results, do: data(result))
     }
   end
 
-  defp data(%{skill: skill, confidence: confidence, variation: variation}) do
+  defp data({%Skill{} = skill, confidence, nil})
+       when is_number(confidence) do
+    %{skill: data(skill), confidence: confidence, matched_variation: nil}
+  end
+
+  defp data({%Skill{} = skill, confidence, %Variation{} = variation})
+       when is_number(confidence) do
     %{skill: data(skill), confidence: confidence, matched_variation: data(variation)}
   end
 
