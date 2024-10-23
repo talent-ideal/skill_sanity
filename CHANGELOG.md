@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.0-alpha.8](https://github.com/talent-ideal/skill_sanity/compare/v1.0.0-alpha.7...v1.0.0-alpha.8) (2024-10-23)
+
+### 🐛 Bug Fixes
+
+* return empty data on skill not found instead of erroring ([73dbee0](https://github.com/talent-ideal/skill_sanity/commit/73dbee033d890cece9b8d9c2ee86ba201ededc0a))
+
 ## [1.0.0-alpha.7](https://github.com/talent-ideal/skill_sanity/compare/v1.0.0-alpha.6...v1.0.0-alpha.7) (2024-10-19)
 
 ### 🛠 Builds
