@@ -41,7 +41,7 @@ defmodule SkillSanity.MixProject do
       {:ash_phoenix, "== 2.1.6"},
       {:appsignal, "== 2.13.0"},
       {:appsignal_phoenix, "== 2.5.0"},
-      {:cors_plug, "~> 3.0"},
+      {:cors_plug, "== 3.0.3"},
       {:logfmt_ex, "== 0.4.2"},
       {:logger_backends, "== 1.0.0"},
       {:phoenix, "== 1.7.14"},
