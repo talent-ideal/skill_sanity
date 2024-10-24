@@ -54,7 +54,7 @@ defmodule SkillSanity.MixProject do
       # TODO: bump on release to {:phoenix_live_view, "~> 1.0.0"},
       {:phoenix_live_view, "== 1.0.0-rc.7", override: true},
       {:slugify, "== 1.3.1"},
-      {:floki, "== 0.36.2", only: :test},
+      {:floki, "== 0.36.3", only: :test},
       {:phoenix_live_dashboard, "== 0.8.4"},
       {:esbuild, "== 0.8.2", runtime: Mix.env() == :dev},
       {:tailwind, "== 0.2.4", runtime: Mix.env() == :dev},
